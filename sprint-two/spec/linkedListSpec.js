@@ -51,5 +51,18 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  // it('should add values in order', function() {
+  //   for (var i = 0; i < 5; i++) {
+  //     linkedList.addtoTail(i);
+  //   }
+
+  //   var head = linkedList.head;
+
+  //   for (var i = 0; i < 5; i++) {
+  //     expect()
+  //   }
+    
+  });
+
   // add more tests here to test the functionality of linkedList
 });
