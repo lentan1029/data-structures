@@ -15,3 +15,8 @@ var queueMethods = {};
 queueMethods.size = function() {
   return this.length;
 };
+
+queueMethods.enqueue = function(value) {
+  this.storage[this.length] = value;
+  this.length++;
+};
