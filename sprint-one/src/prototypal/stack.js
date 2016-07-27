@@ -14,3 +14,8 @@ var stackMethods = {};
 stackMethods.size = function() {
   return this.length;
 };
+
+stackMethods.push = function(value) {
+  this.storage[this.length] = value;
+  this.length++;
+};
