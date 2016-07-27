@@ -20,3 +20,14 @@ queueMethods.enqueue = function(value) {
   this.storage[this.length] = value;
   this.length++;
 };
+
+queueMethods.dequeue = function() {
+  var output = this.storage[0];
+  
+  for (var i = 1; i < this.length; i++) {
+    this.storage[i - 1] = this.storage[i];
+  }
+  delete this.storage[this.length - 1];
+  this.length--; //[.2,3,4,5]
+  return output;
+};
