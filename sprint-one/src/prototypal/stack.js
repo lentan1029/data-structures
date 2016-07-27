@@ -19,3 +19,10 @@ stackMethods.push = function(value) {
   this.storage[this.length] = value;
   this.length++;
 };
+
+stackMethods.pop = function() {
+  this.length--;
+  var output = this.storage[this.length];
+  delete this.storage[this.length];
+  return output;
+};
