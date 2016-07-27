@@ -20,10 +20,12 @@ stackMethods.push = function(value) {
 };
 
 stackMethods.pop = function() {
-  var output = this.storage[this.length - 1];
-  delete this.storage[this.length - 1];
-  this.length--;
-  return output;
+  if (this.length) {
+    var output = this.storage[this.length - 1];
+    delete this.storage[this.length - 1];
+    this.length--;
+    return output;
+  }
 };
 
 stackMethods.size = function() {
