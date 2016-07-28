@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Chrome Profiling Practice</title>
+</head>
+<body>
+  <script src='../lib/underscore/underscore.js'></script>
+
+  <!--script src='src/functional/queue.js'></script>
+  <script src='src/functional/stack.js'></script-->
+  <!--script src='src/functional-shared/queue.js'></script>
+  <script src='src/functional-shared/stack.js'></script-->
+  <!--script src='src/prototypal/queue.js'></script>
+  <script src='src/prototypal/stack.js'></script-->
+  <script src='src/pseudoclassical/queue.js'></script>
+  <script src='src/pseudoclassical/stack.js'></script>
+
+  <script>
+    var create1 = function (constructor) {
+      return new constructor();
+    };
+
+    for (var i = 0; i < 5000000; i++) {
+      create1(Stack);
+    }
+
+    for (var i = 0; i < 5000000; i++) {
+      create1(Queue);
+    }
+  </script>
+
+
+  <!--script src='src/functional-shared/queue.js'></script>
+  <script src='src/functional-shared/stack.js'></script>
+
+  <script>
+    var create2 = function (constructor) {
+      return constructor();
+    };
+
+    for (var i = 0; i < 5000000; i++) {
+      create2(Stack);
+    }
+
+    for (var i = 0; i < 5000000; i++) {
+      create2(Queue);
+    }
+  </script>
+
+  <script src='src/prototypal/queue.js'></script>
+  <script src='src/prototypal/stack.js'></script>
+
+  <script>
+    var create3 = function (constructor) {
+      return constructor();
+    };
+
+    for (var i = 0; i < 5000000; i++) {
+      create3(Stack);
+    }
+
+    for (var i = 0; i < 5000000; i++) {
+      create3(Queue);
+    }
+  </script>
+
+  <script src='src/pseudoclassical/queue.js'></script>
+  <script src='src/pseudoclassical/stack.js'></script>
+
+  <script>
+    var create4 = function (constructor) {
+      return new constructor();
+    };
+
+    for (var i = 0; i < 5000000; i++) {
+      create4(Stack);
+    }
+
+    for (var i = 0; i < 5000000; i++) {
+      create4(Queue);
+    }
+  </script-->
+</body>
+</html>

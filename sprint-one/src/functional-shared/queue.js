@@ -5,7 +5,10 @@ var Queue = function() {
   newInstance.length = 0;
   newInstance.storage = {};
 
-  _.extend(newInstance, queueMethods);
+  // _.extend(newInstance, queueMethods);
+  newInstance.size = queueMethods.size;
+  newInstance.enqueue = queueMethods.enqueue;
+  newInstance.dequeue = queueMethods.dequeue;
 
   return newInstance;
 };
