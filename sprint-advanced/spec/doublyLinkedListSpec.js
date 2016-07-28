@@ -49,7 +49,7 @@ describe('DoublyLinkedList', function() {
   });
 
   it('should return the value of the former head when removeHead is called', function() {
-    doublyLinkedList.addToTail(4);
+    doublyLinkedList.addToHead(4);
     expect(doublyLinkedList.removeHead()).to.equal(4);
   });
 
