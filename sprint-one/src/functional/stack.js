@@ -12,7 +12,6 @@ var Stack = function() {
     storage[size - 1] = value;
   };
 
-
   someInstance.pop = function() {
     if (size > 0) {
       var output = storage[size - 1];

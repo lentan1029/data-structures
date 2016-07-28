@@ -15,17 +15,20 @@
   <script src='src/pseudoclassical/stack.js'></script>
 
   <script>
-    var create1 = function (constructor) {
-      return new constructor();
-    };
+  var stackArr = [];
+  var queueArr = [];
 
-    for (var i = 0; i < 5000000; i++) {
-      create1(Stack);
-    }
+    // var create1 = function (constructor) {
+    //   storageArr(constructor());
+    // };
 
-    for (var i = 0; i < 5000000; i++) {
-      create1(Queue);
-    }
+  for (var i = 0; i < 50000; i++) {
+    stackArr.push(Stack());
+  }
+
+  for (var i = 0; i < 50000; i++) {
+    queueArr.push(Queue());
+  }
   </script>
 
 
