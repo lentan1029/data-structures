@@ -25,7 +25,26 @@ BinarySearchTree.prototype.insert = function(newValue) {
   }
 };
 
-BinarySearchTree.prototype.contains = function() {};
+BinarySearchTree.prototype.contains = function(input) {
+  var res = false;
+
+  var treeTraverse = function(node, value) {
+    if (node !== null) {
+      if (node.value === value) {
+        res = true;
+      }
+      if (value < node.value) {
+        treeTraverse(node.left, value);
+      } else {
+        treeTraverse(node.right, value);
+      }
+    }
+  };
+
+  treeTraverse(this, input);
+
+  return res;
+};
 
 BinarySearchTree.prototype.depthFirstLog = function() {};
 
