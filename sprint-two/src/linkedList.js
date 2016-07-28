@@ -20,6 +20,18 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+    var current = list.head;
+
+    while (current) {
+
+      if (current.value === target) {
+        return true;
+      }
+
+      current = current.next;
+    }
+
+    return false;
   };
 
   return list;

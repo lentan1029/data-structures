@@ -53,7 +53,7 @@ describe('linkedList', function() {
 
   it('should add values in order', function() {
     for (var i = 0; i < 5; i++) {
-      linkedList.addtoTail(i);
+      linkedList.addToTail(i);
     }
 
     var node = linkedList.head;
