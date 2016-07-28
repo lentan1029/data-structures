@@ -11,7 +11,7 @@ var Tree = function(value) {
 
 var treeMethods = {};
 
-treeMethods.addChild = function(value) {
+treeMethods.addChild = function(value) {//O(1)
   // your code here
   var child = Tree(value);
 
@@ -19,7 +19,7 @@ treeMethods.addChild = function(value) {
   // newTree.children = ;  // fix me
 };
 
-treeMethods.contains = function(target) {
+treeMethods.contains = function(target) {//O(n)
 
   var res = false;
   
