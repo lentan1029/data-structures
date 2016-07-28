@@ -51,16 +51,17 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
-  // it('should add values in order', function() {
-  //   for (var i = 0; i < 5; i++) {
-  //     linkedList.addtoTail(i);
-  //   }
+  it('should add values in order', function() {
+    for (var i = 0; i < 5; i++) {
+      linkedList.addtoTail(i);
+    }
 
-  //   var head = linkedList.head;
-
-  //   for (var i = 0; i < 5; i++) {
-  //     expect()
-  //   }
+    var node = linkedList.head;
+    expect(node.value).to.equal(0);
+    for (var i = 1; i < 5; i++) {
+      node = node.next;
+      expect(node.value).to.equal(i);
+    }
     
   });
 
