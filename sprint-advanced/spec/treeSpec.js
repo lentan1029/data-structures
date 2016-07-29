@@ -8,6 +8,7 @@ describe('tree', function() {
   it('should have methods named "addChild" and "contains", and a properties named "value" and "parent"', function() {
     expect(tree.addChild).to.be.a('function');
     expect(tree.contains).to.be.a('function');
+    expect(tree.hasOwnProperty('parent')).to.equal(true);
     expect(tree.hasOwnProperty('value')).to.equal(true);
   });
 
@@ -39,6 +40,12 @@ describe('tree', function() {
     tree.children[1].addChild(8);
     expect(tree.contains(7)).to.equal(true);
     expect(tree.contains(8)).to.equal(true);
+  });
+
+  it('should have correct parent for newly added child', function() {
+    tree.addChild(5);
+    var child = tree.children[0];
+    expect(child.parent).to.equal(tree);
   });
 
   it('should orphan a tree removed from parent', function() {
