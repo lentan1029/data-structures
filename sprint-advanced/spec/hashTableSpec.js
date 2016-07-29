@@ -1,6 +1,6 @@
 describe('hashTable', function() {
   var hashTable;
-  var people = [['Steven', 'Tyler'], ['George', 'Harrison'], ['Mr.', 'Doob'], ['Dr.', 'Sunshine'], ['John', 'Resig'], ['Brendan', 'Eich'], ['Alan', 'Turing']];
+  var people = [['Leonard', 'Tan'], ['Damien', 'Rochford'], ['Johnny', 'Doe'], ['Leonard2', 'Tan2'], ['Damien2', 'Rochford2'], ['John2', 'Doe2'], ['Damien3', 'Rochford3'], ['Leonard3', 'Tan3'], ['John3', 'Doe3'], ['Steven', 'Tyler'], ['George', 'Harrison'], ['Mr.', 'Doob'], ['Dr.', 'Sunshine'], ['John', 'Resig'], ['Brendan', 'Eich'], ['Alan', 'Turing']];
 
 
   beforeEach(function() {
@@ -55,6 +55,7 @@ describe('hashTable', function() {
       hashTable.insert(firstName, lastName);
       expect(hashTable.retrieve(firstName)).to.equal(lastName);
     });
+
     expect(hashTable._limit).to.equal(16);
   });
 
@@ -65,12 +66,23 @@ describe('hashTable', function() {
       hashTable.insert(firstName, lastName);
       expect(hashTable.retrieve(firstName)).to.equal(lastName);
     });
+
+
     expect(hashTable._limit).to.equal(16);
     hashTable.remove('George');
     hashTable.remove('Dr.');
     hashTable.remove('Steven');
     hashTable.remove('John');
     hashTable.remove('Mr.');
+    hashTable.remove('Leonard');
+    hashTable.remove('Damien');
+    hashTable.remove('Johnny');
+    hashTable.remove('Leonard2');
+    hashTable.remove('Damien2');
+    hashTable.remove('John2');
+    hashTable.remove('Leonard3');
+    hashTable.remove('Damien3', 'Rochford3');
+    hashTable.remove('John3', 'Doe3');
     expect(hashTable._limit).to.equal(8);
   });
 });

@@ -31,12 +31,17 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   if (!this._isHashing) {
-    this.halve(k);
+    this.halve();
   }
   
   var index = getIndexBelowMaxForKey(k, this._limit);
-  this._storage.set(index, undefined);
-  
+  // if (this._storage.get(index) === undefined) {
+  //   debugger;
+  // }
+  delete this._storage.get(index)[k];
+  if (Object.keys(this._storage.get(index)).length === 0) {
+    this._storage.set(index, undefined);
+  }
 };
 
 HashTable.prototype.double = function() {
@@ -63,18 +68,15 @@ HashTable.prototype.double = function() {
   } 
 };
 
-HashTable.prototype.halve = function(k) {
-
+HashTable.prototype.halve = function() {
   var counter = 0;
   for (var i = 0; i < this._limit; i++) {
-
     if (this._storage.get(i)) {
       counter++;
     }
   }
   if (counter < (this._limit / 4)) {
     this._isHashing = true;
-
     var oldStorage = this._storage;
     this._limit = this._limit / 2;
     this._storage = LimitedArray(this._limit);

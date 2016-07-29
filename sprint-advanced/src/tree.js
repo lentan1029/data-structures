@@ -41,18 +41,20 @@ treeMethods.contains = function(target) { //O(n)
     }
   };
 
-  var traverseTree = function(tree) {
-    checkTree(tree);
-    for (var i = 0; i < tree.children.length; i++) {
-      traverseTree(tree.children[i]);
-    }
-  };
-
-  traverseTree(this);
+  this.traverseTree(this, checkTree);
 
 
   return res;
 };
+
+treeMethods.traverseTree = function(tree, cb) {
+  cb(tree);
+  for (var i = 0; i < tree.children.length; i++) {
+    this.traverseTree(tree.children[i], cb);
+  }
+};
+
+
 
 
 
