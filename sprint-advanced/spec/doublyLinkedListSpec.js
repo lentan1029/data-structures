@@ -101,8 +101,4 @@ describe('DoublyLinkedList', function() {
     }
     
   });
-
-  it('')
-
-  // add more tests here to test the functionality of doublyLinkedList
 });
