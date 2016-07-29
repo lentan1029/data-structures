@@ -26,20 +26,31 @@ describe('set', function() {
 
   it('should handle numeric inputs', function() {
     set.add(0);
+    expect(set.contains('0')).to.equal(false);
     expect(set.contains(0)).to.equal(true);
   });
 
   it('should handle weird inputs', function() {
     var obj = {a: 1};
+    var otherObject = {b: 2};
     var fn = function () {};
+    var otherFn = function () { 
+      console.log(); 
+    };
     var arr = ['array'];
+    var otherArr = ['other array'];
     set.add(obj);
     set.add(fn);
     set.add(arr);
 
-    expect(set.contains(obj)).to.equal(true);
+
+    // expect(set.contains(obj)).to.equal(true);
+    // expect(set.contains(otherObject)).to.equal(false);
     expect(set.contains(fn)).to.equal(true);
-    expect(set.contains(arr)).to.equal(true);
+    debugger;
+    expect(set.contains(otherFn)).to.equal(false);
+    // expect(set.contains(arr)).to.equal(true);
+    // expect(set.contains(otherArr)).to.equal(false);
   });
 
 });
