@@ -46,7 +46,7 @@ HashTable.prototype.double = function() {
       counter++;
     }
   }
-  if (counter > (this._limit / 2)) {
+  if (counter > (this._limit * 0.75)) {
     this._isHashing = true;
     var oldStorage = this._storage; //TODO: what happens if we resize twice? how can insert everything before resizing?
     this._limit *= 2;
